@@ -1,0 +1,51 @@
+.patient-record {
+  border: dashed #0f8ae6;
+  border-left: none;
+  border-right: none;
+  background-color: #fff;
+}
+
+.first-record {
+  border-bottom: dashed #0f8ae6;
+  background-color: #fff !important;
+}
+
+.last-record {
+  border-top: dashed #0f8ae6;
+  background-color: #fff !important;
+}
+
+.img-thumbnail {
+  width: 54px;
+  height: 54px;
+  border-radius: 15%;
+}
+
+.record-details {
+  font-size: 0.9 rem;
+}
+
+.angle-icon:hover {
+  cursor: pointer;
+}
+
+.apt-font {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 1200px) {
+  .px-0-xl {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .mb-3-xl {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .mb-3-xs {
+    margin-bottom: 1rem;
+  }
+}

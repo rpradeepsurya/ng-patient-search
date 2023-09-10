@@ -1,0 +1,36 @@
+.form-shadow {
+  box-shadow: 8px 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content {
+  background-color: #fff;
+}
+
+.tab-div {
+  border: none;
+  background-color: #f6f2ee;
+}
+
+.custom-tab-container {
+  display: inline-block;
+}
+
+.nav-tabs {
+  flex-wrap: nowrap;
+}
+
+.btn-custom {
+  background-color: #5b8a96;
+  color: #fff;
+  width: 150px;
+}
+
+.nav-link {
+  color: #5b8a96;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.search-btn {
+  display: flex;
+  justify-content: flex-end;
+}

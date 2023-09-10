@@ -1,0 +1,66 @@
+<div class="container mx-0 px-0">
+  <h4 class="mb-3"><i class="fa fa-search p-2"></i> Search your patients</h4>
+  <div class="">
+      <nav>
+      <div class="nav nav-tabs" id="searchTabs" role="tablist">
+          <button class="nav-link active fw-bold" [ngClass]="{'active': activeTab === 'basic'}" id="basic-tab" data-toggle="tab" href="#basic" role="tab" aria-controls="basic"
+            aria-selected="true" (click)="activeTab = 'basic'">Basic</button>
+          <button class="nav-link fw-bold" [ngClass]="{'active': activeTab === 'advanced'}" id="advanced-tab" data-toggle="tab" href="#advanced" role="tab"
+            aria-controls="advanced" aria-selected="false" (click)="activeTab = 'advanced'">Advanced</button>
+      </div>
+    </nav>
+    <div class="tab-content form-shadow" id="searchTabsContent">
+      <!-- Basic Search -->
+      <div *ngIf="activeTab === 'basic'" class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
+        <form [formGroup]="searchForm" (ngSubmit)="search()">
+          <div class="row ms-1 me-1 p-1 pt-3">
+            <p class="fs-5">Patient Info</p>
+            <div class="form-group col-lg-3 col-md-6 col-sm-12">
+              <label class="fw-bold pb-1" for="firstName">First Name</label>
+              <input type="text" id="firstName" class="form-control" placeholder="First Name"
+                formControlName="firstName">
+            </div>
+            <div class="form-group col-lg-3 col-md-6 col-sm-12">
+              <label class="fw-bold pb-1" for="lastName">Last Name</label>
+              <input type="text" id="lastName" class="form-control" placeholder="Last Name" formControlName="lastName">
+            </div>
+            <div class="form-group col-lg-2 col-md-6 col-sm-12">
+              <label class="fw-bold pb-1" for="dob">Date of Birth</label>
+              <input type="date" id="dob" class="form-control" placeholder="Date of Birth" formControlName="dob" [max]="today">
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row m-1">
+            <p class="fs-5">Appointment Range</p>
+            <div class="form-group col-lg-2 col-md-4 col-sm-6">
+              <label class="fw-bold pb-1" for="startDate">Start Date</label>
+              <input type="date" id="startDate" class="form-control" placeholder="Start Date"
+                formControlName="startDate">
+            </div>
+            <div class="form-group col-lg-2 col-md-4 col-sm-6">
+              <label class="fw-bold pb-1" for="endDate">End Date</label>
+              <input type="date" id="endDate" class="form-control" placeholder="End Date" formControlName="endDate">
+            </div>
+          </div>
+          <hr class="mb-0">
+          <div class="search-btn p-2">
+            <button class="btn btn-custom float-right" [disabled]="!isButtonEnabled"
+              (click)="search()">Search</button>
+          </div>
+        </form>
+      </div>
+    
+    <!-- Advanced Search -->
+    <div *ngIf="activeTab === 'advanced'" class="tab-pane fade show active" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
+      <div class="row p-3">
+      <div class="form-group col-lg-3 col-md-6 col-sm-12 mt-3">
+        <label class="fw-bold pb-1" for="searchAll">Search All</label>
+        <input type="text" id="searchAll" class="form-control" placeholder="Search in all fields" [(ngModel)]="searchAll">
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
